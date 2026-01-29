@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="./img/CILKGax.png" />
+    <title>Happy birthday</title>
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <style>
+      .btn-bir {
+        cursor: pointer;
+        user-select: none;
+      }
+    </style>
+  </head>
+
+  <body class="page__main">
+    <div class="buttons">
+      <a class="btn btn-bir" id="musicToggle">
+         🎈ấn vào đây để nghe nhạc nè
+      </a>
+
+      <a href="timeline.html" class="btn btn-timeline">👉Click cái này tiếp ha👈</a>
+    </div>
+
+    <img src="268.jpg" alt="" class="cover" />
+ <div id="cover"> note:Đúng ra là t để avt bạn thì chắc là đẹp hơn nhưng ko có sự cho phép b nên thôi để tạm cái bánh ăn cho no mắt nhé :D</div>
+     <div id="songNote">🎶nhạc:CÔ GÁI M52-HUYR-CHẮC LÀ NEWVER-T NGHE HAY NÊN NGHE THỬ 1 LÂ</div>
+    <audio id="player" loop>
+       <source src="2026-01-21 17-52-21.mp3" type="audio/mp3" />  
+    </audio>
+    <script>
+      const player = document.getElementById("player");
+      const toggleText = document.getElementById("musicToggle");
+
+      let isPlaying = false;
+
+      toggleText.addEventListener("click", () => {
+        if (!isPlaying) {
+          player.play();
+          toggleText.innerHTML = "🧨 tạm dừng nhạc";
+        } else {
+          player.pause();
+          toggleText.innerHTML = "🎈 ấn vào đây để nghe nhạc!";
+        }
+        isPlaying = !isPlaying;
+      });
+    </script>
+  </body>
+</html>
