@@ -1,4 +1,4 @@
-/* ===== RESET & FIX CHUNG ===== */
+/* ===== RESET ===== */
 * {
     box-sizing: border-box;
 }
@@ -6,19 +6,21 @@
 html, body {
     width: 100%;
     overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
 }
 
 /* ===== BODY ===== */
 body {
     margin: 0;
     padding: 0;
-    background-image: url("https://png.pngtree.com/background/20250106/original/pngtree-birthday-card-template-design-with-colorful-background-picture-image_16071774.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 
-    font-size: 14px;
+    background-image: url("https://png.pngtree.com/background/20250106/original/pngtree-birthday-card-template-design-with-colorful-background-picture-image_16071774.jpg");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+
     font-family: sans-serif;
+    font-size: 14px;
     color: #660086;
 }
 
@@ -34,79 +36,51 @@ a {
 }
 
 /* ===== DESKTOP ===== */
-#wrap {
-    position: relative;
-    margin: 10px auto 0;
-    width: 1100px;
-    height: 680px;
-}
-
-#canvas {
-    margin: 0 auto;
-    width: 1100px;
-    height: 680px;
-}
-
-#text {
-    position: absolute;
-    width: 400px;
-    height: 425px;
-    left: 60px;
-    top: 80px;
-}
-
-#code {
-    display: none;
-    font-size: 16px;
-    width: 500px;
-    color: #3b6900;
-    font-family: cursive;
-}
-
-#clock-box {
-    position: absolute;
-    left: 60px;
-    top: 550px;
-    font-size: 28px;
-    display: none;
-}
-
-#clock-box a {
-    font-size: 28px;
-}
-
-#clock {
-    margin-left: 48px;
-}
-
-#clock .digit {
-    font-size: 64px;
-}
-
-#error {
-    margin: 60px auto 0;
-    text-align: center;
-    display: none;
-}
-
-.hand {
-    cursor: pointer;
-}
-
-.space {
-    margin-right: 150px;
-}
-
-/* ===== MOBILE FIX (KHÔNG SCALE) ===== */
-@media (max-width: 768px) {
+@media (min-width: 769px) {
 
     #wrap,
     #canvas {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-        margin: 0 auto;
+        width: 1100px;
+        height: 680px;
+        margin: 10px auto 0;
         position: relative;
+    }
+
+    #text {
+        position: absolute;
+        width: 400px;
+        height: 425px;
+        left: 60px;
+        top: 80px;
+    }
+
+    #clock-box {
+        position: absolute;
+        left: 60px;
+        top: 550px;
+        font-size: 28px;
+        display: none;
+    }
+
+    #clock {
+        margin-left: 48px;
+    }
+
+    #clock .digit {
+        font-size: 64px;
+    }
+}
+
+/* ===== MOBILE – HẾT GIẬT ===== */
+@media (max-width: 768px) {
+
+    /* BỎ KHUNG CỨNG */
+    #wrap,
+    #canvas {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        position: static;
     }
 
     img {
@@ -115,16 +89,14 @@ a {
         display: block;
     }
 
+    /* TEXT */
     #text {
-        position: relative;
+        position: static;       /* QUAN TRỌNG */
         width: 92%;
-        height: auto;
         margin: 20px auto;
-        left: 0;
-        top: 0;
 
-        background: rgba(255, 255, 255, 0.75);
-        padding: 14px 16px;
+        background: rgba(255,255,255,0.75);
+        padding: 16px;
         border-radius: 14px;
 
         font-size: 15px;
@@ -138,11 +110,10 @@ a {
            -1px -1px 0 #fff;
     }
 
+    /* CLOCK */
     #clock-box {
-        position: relative;
-        left: 0;
-        top: 0;
-        margin: 15px 0;
+        position: static;       /* QUAN TRỌNG */
+        margin: 10px 0 20px;
         text-align: center;
         font-size: 20px;
     }
@@ -152,7 +123,7 @@ a {
     }
 
     #clock .digit {
-        font-size: 34px;
+        font-size: 32px;
     }
 
     a {
@@ -164,10 +135,10 @@ a {
 @media (max-width: 480px) {
     #text {
         font-size: 14px;
-        padding: 12px 14px;
+        padding: 14px;
     }
 
     #clock .digit {
-        font-size: 30px;
+        font-size: 28px;
     }
 }
