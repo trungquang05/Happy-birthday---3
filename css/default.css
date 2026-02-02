@@ -1,41 +1,42 @@
-/* ===== RESET ===== */
+/* ================= RESET ================= */
 * {
     box-sizing: border-box;
 }
 
 html, body {
     width: 100%;
+    margin: 0;
+    padding: 0;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
 }
 
-/* ===== BODY ===== */
+/* ================= BODY ================= */
+/* Desktop */
 body {
-    margin: 0;
-    padding: 0;
-
-    background-image: url("https://png.pngtree.com/background/20250106/original/pngtree-birthday-card-template-design-with-colorful-background-picture-image_16071774.jpg");
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-size: cover;
-
     font-family: sans-serif;
     font-size: 14px;
     color: #660086;
+
+    background-image: url("https://png.pngtree.com/background/20250106/original/pngtree-birthday-card-template-design-with-colorful-background-picture-image_16071774.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
-/* ===== LINK ===== */
+/* ================= LINK ================= */
 a {
     color: #f60404;
     font-size: 18px;
     text-decoration: none;
 }
 
+/* ================= MAIN ================= */
 #main {
     width: 100%;
 }
 
-/* ===== DESKTOP ===== */
+/* ================= DESKTOP LAYOUT ================= */
 @media (min-width: 769px) {
 
     #wrap,
@@ -71,10 +72,21 @@ a {
     }
 }
 
-/* ===== MOBILE – HẾT GIẬT ===== */
+/* ================= MOBILE – MƯỢT & GỌN ================= */
 @media (max-width: 768px) {
 
-    /* BỎ KHUNG CỨNG */
+    body {
+        background-image:
+            linear-gradient(
+                rgba(255,255,255,0.6),
+                rgba(255,255,255,0.6)
+            ),
+            url("https://images.unsplash.com/photo-1543589077-47d81606c1bf?w=800&q=60");
+        background-size: cover;
+        background-position: top center;
+        background-attachment: scroll;
+    }
+
     #wrap,
     #canvas {
         width: 100%;
@@ -89,19 +101,20 @@ a {
         display: block;
     }
 
-    /* TEXT */
     #text {
-        position: static;       /* QUAN TRỌNG */
+        position: static;
         width: 92%;
-        margin: 20px auto;
+        margin: 24px auto;
+        padding: 18px;
 
-        background: rgba(255,255,255,0.75);
-        padding: 16px;
-        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.88);
+        border-radius: 18px;
 
         font-size: 15px;
-        line-height: 1.6;
+        line-height: 1.7;
         color: #ff0066;
+
+        box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 
         text-shadow:
             1px 1px 0 #fff,
@@ -112,10 +125,11 @@ a {
 
     /* CLOCK */
     #clock-box {
-        position: static;       /* QUAN TRỌNG */
-        margin: 10px 0 20px;
+        position: static;
+        margin: 10px auto 20px;
         text-align: center;
         font-size: 20px;
+        color: #ff3366;
     }
 
     #clock {
@@ -123,7 +137,7 @@ a {
     }
 
     #clock .digit {
-        font-size: 32px;
+        font-size: 30px;
     }
 
     a {
@@ -131,14 +145,23 @@ a {
     }
 }
 
-/* ===== MOBILE NHỎ ===== */
-@media (max-width: 480px) {
-    #text {
-        font-size: 14px;
-        padding: 14px;
-    }
+/* ================= MOBILE NHỎ ================= */
 
     #clock .digit {
         font-size: 28px;
     }
+}
+
+#error {
+    margin: 60px auto 0;
+    text-align: center;
+    display: none;
+}
+
+.hand {
+    cursor: pointer;
+}
+
+.space {
+    margin-right: 150px;
 }
