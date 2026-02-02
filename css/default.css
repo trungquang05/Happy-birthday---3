@@ -126,14 +126,3 @@ a {
         font-size: 16px;
     }
 }
-
-@media (max-width: 480px) {
-    #wrap,
-    #canvas {
-        transform: scale(0.8);
-    }
-
-    #clock .digit {
-        font-size: 36px;
-    }
-}
