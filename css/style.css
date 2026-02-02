@@ -16,6 +16,7 @@ body {
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
+    
 }
 
 a {
@@ -24,7 +25,7 @@ a {
 
 /* ================= PAGE MAIN ================= */
 .page__main {
-    background-image: url("../img/background.png");
+    background-image: url("https://png.pngtree.com/background/20240615/original/pngtree-natures-summer-delight-sunflowers-field-with-a-breathtaking-blue-sky-background-picture-image_9348263.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -57,7 +58,21 @@ a {
     border-radius: 10px;
     display: block;
 }
+.message {
+    font-size: 22px;
+    line-height: 1.7;
+    color: #3a07f5; 
+    font-weight: 600;
 
+    background: rgba(255, 255, 255, 0.65);
+    padding: 12px 16px;
+    border-radius: 10px;
+    max-width: 98%;
+     text-align: center;
+    margin-left: 22.5px; 
+
+
+}
 /* ================= BUTTON STYLES ================= */
 .btn-bir {
     background-image: linear-gradient(
@@ -71,7 +86,7 @@ a {
 .btn-timeline {
     background-image: linear-gradient(
         to right,
-        #da22ff 0%,
+        #ff04d9 0%,
         #9733ee 51%,
         #da22ff 100%
     );
