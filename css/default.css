@@ -1,3 +1,14 @@
+/* ===== RESET & FIX CHUNG ===== */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* ===== BODY ===== */
 body {
     margin: 0;
     padding: 0;
@@ -9,10 +20,9 @@ body {
     font-size: 14px;
     font-family: sans-serif;
     color: #660086;
-
-    overflow-x: hidden; 
 }
 
+/* ===== LINK ===== */
 a {
     color: #f60404;
     font-size: 18px;
@@ -23,6 +33,7 @@ a {
     width: 100%;
 }
 
+/* ===== DESKTOP ===== */
 #wrap {
     position: relative;
     margin: 10px auto 0;
@@ -37,13 +48,11 @@ a {
 }
 
 #text {
+    position: absolute;
     width: 400px;
     height: 425px;
     left: 60px;
     top: 80px;
-    position: absolute;
-     
-
 }
 
 #code {
@@ -88,28 +97,52 @@ a {
     margin-right: 150px;
 }
 
+/* ===== MOBILE FIX (KHÔNG SCALE) ===== */
 @media (max-width: 768px) {
+
     #wrap,
     #canvas {
-        width: 100vw;
+        width: 100%;
+        max-width: 100%;
         height: auto;
-        transform: scale(0.9);
-        transform-origin: top center;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
     }
 
     #text {
         position: relative;
-        width: 90%;
+        width: 92%;
         height: auto;
-        left: 5%;
-        top: 40px;
+        margin: 20px auto;
+        left: 0;
+        top: 0;
+
+        background: rgba(255, 255, 255, 0.75);
+        padding: 14px 16px;
+        border-radius: 14px;
+
+        font-size: 15px;
+        line-height: 1.6;
+        color: #ff0066;
+
+        text-shadow:
+            1px 1px 0 #fff,
+           -1px 1px 0 #fff,
+            1px -1px 0 #fff,
+           -1px -1px 0 #fff;
     }
 
     #clock-box {
         position: relative;
         left: 0;
         top: 0;
-        margin-top: 20px;
+        margin: 15px 0;
         text-align: center;
         font-size: 20px;
     }
@@ -119,10 +152,22 @@ a {
     }
 
     #clock .digit {
-        font-size: 42px;
+        font-size: 34px;
     }
 
     a {
         font-size: 16px;
+    }
+}
+
+/* ===== MOBILE NHỎ ===== */
+@media (max-width: 480px) {
+    #text {
+        font-size: 14px;
+        padding: 12px 14px;
+    }
+
+    #clock .digit {
+        font-size: 30px;
     }
 }
