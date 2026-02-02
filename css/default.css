@@ -1,1 +1,129 @@
-body { margin: 0; padding: 0; background-image: url("https://png.pngtree.com/background/20250106/original/pngtree-birthday-card-template-design-with-colorful-background-picture-image_16071774.jpg"); background-size: cover; background-repeat: no-repeat; font-size: 14px; font-family: "sans-serif", "sans-serif", sans-serif; color: #660086; overflow: auto; } a { color: #f60404; font-size: 18px; text-decoration: none; } #main { width: 100%; } #wrap { position: relative; margin: 0 auto; width: 1100px; height: 680px; margin-top: 10px; } #text { width: 400px; height: 425px; left: 60px; top: 80px; position: absolute; } #code { display: none; font-size: 16px; } #clock-box { position: absolute; left: 60px; top: 550px; font-size: 28px; display: none; } #clock-box a { font-size: 28px; text-decoration: none; } #clock { margin-left: 48px; } #clock .digit { font-size: 64px; } #canvas { margin: 0 auto; width: 1100px; height: 680px; } #error { margin: 0 auto; text-align: center; margin-top: 60px; display: none; } .hand { cursor: pointer; } #code { width: 500px; color: #3b6900; font-family: cursive; } .space { margin-right: 150px; }
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("https://png.pngtree.com/background/20250106/original/pngtree-birthday-card-template-design-with-colorful-background-picture-image_16071774.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    font-size: 14px;
+    font-family: sans-serif;
+    color: #660086;
+
+    overflow-x: hidden; /* FIX TRÀN MOBILE */
+}
+
+a {
+    color: #f60404;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+#main {
+    width: 100%;
+}
+
+/* ===== DESKTOP ===== */
+#wrap {
+    position: relative;
+    margin: 10px auto 0;
+    width: 1100px;
+    height: 680px;
+}
+
+#canvas {
+    margin: 0 auto;
+    width: 1100px;
+    height: 680px;
+}
+
+#text {
+    width: 400px;
+    height: 425px;
+    left: 60px;
+    top: 80px;
+    position: absolute;
+}
+
+#code {
+    display: none;
+    font-size: 16px;
+    width: 500px;
+    color: #3b6900;
+    font-family: cursive;
+}
+
+#clock-box {
+    position: absolute;
+    left: 60px;
+    top: 550px;
+    font-size: 28px;
+    display: none;
+}
+
+#clock-box a {
+    font-size: 28px;
+}
+
+#clock {
+    margin-left: 48px;
+}
+
+#clock .digit {
+    font-size: 64px;
+}
+
+#error {
+    margin: 60px auto 0;
+    text-align: center;
+    display: none;
+}
+
+.hand {
+    cursor: pointer;
+}
+
+.space {
+    margin-right: 150px;
+}
+
+/* ===== MOBILE FIX ===== */
+@media (max-width: auto) {
+    #wrap,
+    #canvas {
+        width: 100vw;
+        height: auto;
+        transform: scale(0.9);
+        transform-origin: top center;
+    }
+
+    #text {
+        position: relative;
+        width: 90%;
+        height: auto;
+        left: 5%;
+        top: 40px;
+    }
+
+    #clock-box {
+        position: relative;
+        left: 0;
+        top: 0;
+        margin-top: 20px;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    #clock {
+        margin-left: 0;
+    }
+
+    #clock .digit {
+        font-size: 42px;
+    }
+
+    a {
+        font-size: 16px;
+    }
+}
+
