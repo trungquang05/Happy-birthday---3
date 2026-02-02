@@ -12,7 +12,11 @@ body {
 
     overflow-x: hidden; /* FIX TRÀN MOBILE */
 }
-
+.say {
+  
+  background: rgba(255, 255, 255, 0.9);
+}
+ 
 a {
     color: #f60404;
     font-size: 18px;
