@@ -169,7 +169,7 @@
             ctx.moveTo(0, 0);
             ctx.scale(0.75, 0.75);
             ctx.font = "12px 微软雅黑,Verdana";
-            ctx.fillText("ấn vào đây nè", 15, 10);
+            ctx.fillText("ấn vào tim nè c", 15, 10);
             ctx.restore();
         },
         clear: function() {
