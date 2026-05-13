@@ -1,3 +1,13 @@
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -5,21 +15,21 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
+    min-height: 100dvh; 
     font-size: 14px;
     font-family: sans-serif;
     color: #660086;
+}
 
-    overflow-x: hidden; /* FIX TRÀN MOBILE */
-}
 .say {
-  
-  background: rgba(255, 255, 255, 0.9);
+
+    background: rgba(255, 255, 255, 0.893);
 }
- 
+
+
 a {
     color: #f60404;
-    font-size: 18px;
+    font-size: clamp(14px, 4vw, 18px);
     text-decoration: none;
 }
 
@@ -27,54 +37,59 @@ a {
     width: 100%;
 }
 
-/* ===== DESKTOP ===== */
+
 #wrap {
     position: relative;
     margin: 10px auto 0;
-    width: 1100px;
-    height: 680px;
+    width: min(1100px, 100%);
+    aspect-ratio: 1100 / 680;  
 }
 
 #canvas {
-    margin: 0 auto;
-    width: 1100px;
-    height: 680px;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover; 
 }
 
+
 #text {
-    width: 400px;
-    height: 425px;
-    left: 60px;
-    top: 80px;
     position: absolute;
+    width: clamp(200px, 36%, 400px);
+    left: 5.5%;  
+    top: 11.8%;  
+    height: auto;
+    min-height: 0;
 }
 
 #code {
     display: none;
-    font-size: 16px;
-    width: 500px;
+    font-size: clamp(12px, 1.5vw, 16px);
+    width: 100%;
+    max-width: 500px;
     color: #3b6900;
     font-family: cursive;
 }
 
+
 #clock-box {
     position: absolute;
-    left: 60px;
-    top: 550px;
-    font-size: 28px;
+    left: 5.5%;
+    top: 80.9%;  
+    font-size: clamp(16px, 2.5vw, 28px);
     display: none;
 }
 
 #clock-box a {
-    font-size: 28px;
+    font-size: inherit;
 }
 
 #clock {
-    margin-left: 48px;
+    margin-left: 4.4%;  
 }
 
 #clock .digit {
-    font-size: 64px;
+    font-size: clamp(30px, 5.8vw, 64px);
 }
 
 #error {
@@ -88,32 +103,68 @@ a {
 }
 
 .space {
-    margin-right: 150px;
+    margin-right: clamp(20px, 13.6vw, 150px);
 }
 
-/* ===== MOBILE FIX ===== */
-@media (max-width: auto) {
-    #wrap,
-    #canvas {
-        width: 100vw;
+
+@media (max-width: 768px) {
+
+    
+    #wrap {
+        aspect-ratio: unset;
         height: auto;
-        transform: scale(0.9);
-        transform-origin: top center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        padding-bottom: 20px;
+    }
+
+@media (max-width: 430px) {
+    #text {
+        width: 96%;
+        font-size: 14px;
+    }
+
+    #clock .digit {
+        font-size: 28px;
+    }
+}
+    #canvas {
+        width: 100%;
+        height: auto;
+        border-radius: 0;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
     }
 
     #text {
         position: relative;
-        width: 90%;
-        height: auto;
-        left: 5%;
-        top: 40px;
+        width: 92%;
+        left: unset;
+        top: unset;
+        background: rgba(255, 255, 255, 0.75);
+        padding: 14px 16px;
+        border-radius: 14px;
+        font-size: 15px;
+        line-height: 1.6;
+        color: #ff0066;
+        text-shadow:
+            1px 1px 0 #fff,
+           -1px 1px 0 #fff,
+            1px -1px 0 #fff,
+           -1px -1px 0 #fff;
     }
 
     #clock-box {
         position: relative;
-        left: 0;
-        top: 0;
-        margin-top: 20px;
+        left: unset;
+        top: unset;
+        width: 92%;
         text-align: center;
         font-size: 20px;
     }
@@ -123,11 +174,22 @@ a {
     }
 
     #clock .digit {
-        font-size: 42px;
+        font-size: 34px;
     }
 
-    a {
-        font-size: 16px;
+    .space {
+        margin-right: 0;
     }
 }
 
+@media (max-width: 480px) {
+    #text {
+        font-size: 14px;
+        padding: 12px 14px;
+        width: 96%;
+    }
+
+    #clock .digit {
+        font-size: 30px;
+    }
+}
